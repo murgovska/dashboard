@@ -1,20 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class='container-fluid'>
+    <div class="row">
+        <!-- Left main menu -->
+        <div class="col-md-2 col-sm-2 left-menu">
+            <ul class="col-md-12 col-sm-12 dashboard-menu">
+                <li class="dashboard-menu__item" (click)="toggleItemVisibility($event)">
+                    <a [routerLink]="['/home']"><i class="fa fa-university fa-lg" aria-hidden="true"></i> CASSA
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                    <ul class="dashboard-submenu" #dashboardSubmenu>
+                        <li class="dashboard-submenu__item" (click)="highlightItem($event)"><i class="fa fa-database" aria-hidden="true"></i> Panoramica
+                        </li>
+                        <li class="dashboard-submenu__item"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Ricarica con carta</li>
+                        <li class="dashboard-submenu__item"><i class="fa fa-list" aria-hidden="true"></i> Estrato conto</li>
+                    </ul>
+                </li>
+                <li class="dashboard-menu__item">
+                    <a [routerLink]="['/myaccount']"><i class="fa fa-user fa-lg" aria-hidden="true"></i> IL MIO CONTO
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </li>
+                <li class="dashboard-menu__item">
+                    <a [routerLink]="['/pdr']"><i class="fa fa-user-o fa-lg" aria-hidden="true"></i> PDR
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </li>
+                <li class="dashboard-menu__item">
+                    <a [routerLink]="['/report']"><i class="fa fa-pie-chart fa-lg" aria-hidden="true"></i> REPORT
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </li>
+                <li class="dashboard-menu__item">
+                    <a [routerLink]="['/bets-list']"><i class="fa fa-list-alt fa-lg" aria-hidden="true"></i> LISTA SCOMMESSE
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </li>
+                <li class="dashboard-menu__item">
+                    <a [routerLink]="['/messages']"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> MESSAGGI
+              <span class="pull-right"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </li>
+            </ul>
+        </div>
 
+        <div class="col-md-9 col-sm-9">
+            <div class="middle-content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <!-- Middle content - routerOutlet -->
+
+</div>

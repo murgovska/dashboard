@@ -1,0 +1,14 @@
+<div class="panel with-nav-tabs panel-default">
+    <div class="panel-heading">
+        <ul class="nav nav-tabs">
+            <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+                <a>{{tab.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div class="tab-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
