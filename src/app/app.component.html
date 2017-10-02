@@ -1,3 +1,55 @@
+<div class='header'>
+    <div class='row header-top'>
+        <div class='col-lg-9 col-md-9 col-sm-12'>
+            <!-- Login form -->
+            <form class="form-inline text-center" name='loginForm'>
+                <div class="form-group">
+                    <div class="inner-addon left-addon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" class="form-control-default txt-no-background" name="username" placeholder="{{'username'}}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="inner-addon left-addon">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                        <input type="password" class="form-control-default txt-no-background" name="password" placeholder="{{'password'}}">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-info form-control-default">{{'login'}}</button>
+            </form>
+            <!-- End of login form  -->
+        </div>
+        <div class='col-lg-3 col-md-3 col-sm-12'>
+            <button type='submit' class='btn btn-warning form-control-default'>
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+              {{'register'}}
+          </button>
+            <button type='submit' class='btn btn-danger form-control-default'>
+              <i class="fa fa-eur" aria-hidden="true"></i>
+              {{'deposit'}}
+          </button>
+            <select (change)="selectLang($event.target.value)" class="select-language txt-no-background">
+              <option *ngFor="let language of supportedLanguages" value={{language.value}}>{{ language.value }}</option>
+          </select>
+        </div>
+    </div>
+    <!-- Logo and menu container -->
+    <div class='row menu-container'>
+        <div class='col-lg-6 col-md-6 pull-left text-center'>
+            <div class='col-lg-4 col-md-4 offset-md-1 offset-lg-1'>
+                <img src='assets/images/common/logo_website.svg'>
+            </div>
+        </div>
+        <div class='col-lg-4 col-md-4 pull-right'>
+            <ul class="nav nav-tabs pull-right text-center">
+                <li class="nav-item"><a class="header-link" href="#">Sports</a></li>
+                <li class="nav-item"><a class="header-link" href="#">Livebetting</a></li>
+                <li class="nav-item"><a class="header-link" href="#">Casino</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End of logo and menu container -->
+</div>
 <div class='container-fluid'>
     <div class="row">
         <!-- Left main menu -->

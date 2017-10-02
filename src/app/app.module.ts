@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 import { RoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
@@ -13,6 +16,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { Tabs } from './tabs';
 import { Tab } from './tab';
 import { OverviewComponent } from './home/overview/overview.component';
+import { BalanceComponent } from './home/balance/balance.component';
+import { PersonalInfoComponent } from './my-account/personal-info/personal-info.component';
+import { SettingsComponent } from './my-account/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +30,13 @@ import { OverviewComponent } from './home/overview/overview.component';
     BetsListComponent,
     MessagesComponent,
     Tabs, 
-    Tab, OverviewComponent
+    Tab, OverviewComponent, BalanceComponent, PersonalInfoComponent, SettingsComponent 
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    FormsModule,
+    RoutingModule,
+    NguiDatetimePickerModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

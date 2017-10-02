@@ -1,0 +1,51 @@
+.balance-container {
+    .search-button {
+        border-radius: 0;
+        background-color: #0275d8;
+        border-color: #0275d8;
+        color: #fff;
+        font-weight: 600;
+    }
+    .first-form-row {
+        margin: 15px 0px;
+        padding: 15px 0px;
+    }
+    .form-row {
+        border: 1px solid #ddd;
+        margin: 15px 0px;
+        padding: 15px 0px;
+    }
+    .info {
+        background-color: #d6f5fa;
+        border: 1px solid #51cbf4;
+        padding: 5px;
+        .info-icon {
+            color: #51cbf4;
+            margin: 0 5px 0 0;
+        }
+        .info-text {
+            font-size: 0.75em;
+            font-weight: 400;
+        }
+    }
+    table.balance {
+        thead {
+            color: #0275d8;
+            th {
+                text-align: center;
+            }
+        }
+        tbody {
+            font-weight: 400;
+            td {
+                text-align: center;
+            }
+            td.money-in {
+                color: green;
+            }
+            td.money-out {
+                color: red;
+            }
+        }
+    }
+}

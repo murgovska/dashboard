@@ -1,0 +1,33 @@
+<div class="info-container">
+    <span class="dashboard-tab-button">Detagli Conto</span><span class="dashboard-tab-button">I miei detagli</span>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" [(ngModel)]="model.username" class="form-control col-md-9" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" [(ngModel)]="model.email" class="form-control col-md-9" />
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="contractNumber">Numero Contratto o ID:</label>
+            <input type="text" [(ngModel)]="model.contractNumber" class="form-control col-md-9" [disabled]=true/>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="durationDate">Data di scadenza</label>
+            <input type="text" [(ngModel)]="model.durationDate" class="form-control col-md-9" [disabled]=true/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<div class="balance-container">
+    <span class="dashboard-tab-button">Ricerca per data</span><span class="dashboard-tab-button">Ricerca per User ID</span>
+    <div class="form-inline row first-form-row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="da" class="col-md-2">Da:</label>
+                <input [(ngModel)]="model.startDate" ngui-datetime-picker date-only="true" class="form-control col-md-9" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="a" class="col-md-2">A:</label>
+                <input [(ngModel)]="model.endDate" ngui-datetime-picker date-only="true" class="form-control col-md-9" />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="checkbox">
+                <label><input type="checkbox"> Solo 1 Livello</label>
+            </div>
+        </div>
+        <div class="col-md-2 text-right">
+            <button type="submit" class="form-control search-button" (click)="searchData($event)">RICERCA</button>
+        </div>
+    </div>
+
+    <div class="form-inline row form-row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tipo" class="col-md-2">Tipo</label>
+                <select [(ngModel)]="tipo" class="form-control col-md-9">
+                  <option>Tutti</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="righe" class="col-md-2">Righe</label>
+                <input type="text" [(ngModel)]="righe" class="form-control col-md-9" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-inline row form-row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="i" class="col-md-2">I:</label>
+                <select [(ngModel)]="i" class="form-control col-md-9">
+                    <option>Tutti</option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="ii" class="col-md-2">II:</label>
+                <select [(ngModel)]="ii" class="form-control col-md-9">
+                    <option>Tutti</option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="iii" class="col-md-2">III:</label>
+                <select [(ngModel)]="iii" class="form-control col-md-9">
+                    <option>Tutti</option>
+                  </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 offset-md-2 text-center info" [hidden]="search"><i class="fa fa-info-circle fa-2x info-icon" aria-hidden="true"></i><span class="info-text"> Nessun dato e stato rilevato che corrisponde a tuoi criteri di ricerca. </span></div>
+    <div class="col-md-12" [hidden]="!search">
+        <table class="table table-striped table-bordered balance">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Operazione</th>
+                    <th>Data</th>
+                    <th>Descrizione</th>
+                    <th>Entrata</th>
+                    <th>Uscita</th>
+                    <th>Totali</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>type</td>
+                    <td>dd/mm/yy</td>
+                    <td>description</td>
+                    <td class="money-in">{{100500 | currency:'EUR':true}}</td>
+                    <td class="money-out">{{100500 | currency:'EUR':true}}</td>
+                    <td>{{100500 | currency:'EUR':true}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>type</td>
+                    <td>dd/mm/yy</td>
+                    <td>description</td>
+                    <td class="money-in">{{100500 | currency:'EUR':true}}</td>
+                    <td class="money-out">{{100500 | currency:'EUR':true}}</td>
+                    <td>{{100500 | currency:'EUR':true}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
