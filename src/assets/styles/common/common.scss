@@ -137,11 +137,35 @@ a.header-link:hover {
     border-radius: 0!important;
 }
 
-.dashboard-tab-button {
-    background-color: #fff;
-    color: #777;
-    border-width: 0 0 3px 0;
+.info-divider {
+    background-color: #d6f5fa;
+    border: 1px solid #51cbf4;
+    padding: 5px;
+}
+
+div.buttons {
+    margin-bottom: 15px;
+}
+
+@mixin button {
+    width: 125px;
+    border-width: 2px;
+    border-radius: 0;
+}
+
+.search-button,
+.save-button {
+    @include button;
+    background-color: #0275d8;
     border-color: #0275d8;
-    border-style: solid;
-    margin-right: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.cancel-button {
+    @include button;
+    border-color: #AE0F0F;
+    color: #AE0F0F;
+    background-color: #fff;
+    font-weight: 600;
 }

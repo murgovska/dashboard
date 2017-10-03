@@ -1,3 +1,48 @@
-<p>
-  settings works!
-</p>
+<div class="settings-container">
+    <tabs>
+        <tab [tabTitle]="'Sicurezza'">
+            <form>
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="oldPassword">Vecchia Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="userSettings.oldPassword" name="oldPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nouva Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="userSettings.newPassword" name="newPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Conferma la password</label>
+                        <input type="password" class="form-control" [(ngModel)]="userSettings.confirmPassword" name="conformPassword">
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn save-button" value="AGGIORNA">
+                    </div>
+                </div>
+            </form>
+        </tab>
+        <tab [tabTitle]="'Sessione'" class="session-tab">
+            <div class="col-md-12">Durata sessione</div>
+            <div class="col-md-12">Qui puoi impostare la durata della tua sessione di login. L'impostazione corrente e 20 minuti.</div>
+            <form>
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="sessionDuration" class="form-label">Inserisci il tempo desiderato in minuti</label>
+                        <input type="text" class="form-control" [(ngModel)]="userSession.sessionDuration" name="sessionDuration">
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn save-button" value="AGGIORNA">
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="col-md-12">
+                <ol type="a">
+                    <li>Sospende la tua sessione loggata</li>
+                    <li>Interrompe ogni sessione di gioco</li>
+                </ol>
+            </div>
+
+        </tab>
+    </tabs>
+</div>

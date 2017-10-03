@@ -1,33 +1,204 @@
 <div class="info-container">
-    <span class="dashboard-tab-button">Detagli Conto</span><span class="dashboard-tab-button">I miei detagli</span>
-</div>
+    <tabs>
+        <tab [tabTitle]="'Detagli Conto'">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" [(ngModel)]="model.username" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" [(ngModel)]="model.email" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" [(ngModel)]="model.username" class="form-control col-md-9" />
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" [(ngModel)]="model.email" class="form-control col-md-9" />
-        </div>
-    </div>
-</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="contractNumber">Numero Contratto o ID:</label>
+                        <input type="text" [(ngModel)]="model.contractNumber" class="form-control col-md-9" [disabled]=true/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="durationDate">Data di scadenza</label>
+                        <input type="text" [(ngModel)]="model.durationDate" class="form-control col-md-9" [disabled]=true/>
+                    </div>
+                </div>
+            </div>
+        </tab>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="contractNumber">Numero Contratto o ID:</label>
-            <input type="text" [(ngModel)]="model.contractNumber" class="form-control col-md-9" [disabled]=true/>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="durationDate">Data di scadenza</label>
-            <input type="text" [(ngModel)]="model.durationDate" class="form-control col-md-9" [disabled]=true/>
-        </div>
-    </div>
+        <tab [tabTitle]="'I miei detagli'">
+            <div class="col-md-12 info-divider">
+                Dati Anagrafici
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="surname">Cognome</label>
+                        <input type="text" [(ngModel)]="userModel.surname" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" [(ngModel)]="userModel.name" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dateOfBirth">Data di Nascita</label>
+                        <input type="text" [(ngModel)]="userModel.dateOfBirth" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="birthNation">Nazione di Nascita</label>
+                        <input type="text" [(ngModel)]="userModel.birthNation" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="regionOfBirth">Regione di Nascita</label>
+                        <input type="text" [(ngModel)]="userModel.regionOfBirth" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="birthProvince">Provincia di Nascita</label>
+                        <input type="text" [(ngModel)]="userModel.birthProvince" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="birthPlace">Comune di Nascita</label>
+                        <input type="text" [(ngModel)]="userModel.birthPlace" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fiscalCode">Codice Fiscale</label>
+                        <input type="text" [(ngModel)]="userModel.fiscalCode" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 info-divider">
+                Dati di Rezidenca
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="countryOfResidence">Nazione di Rezidenza</label>
+                        <input type="text" [(ngModel)]="userModel.countryOfResidence" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cityOfResidence">Citta' di rezidenca (*)</label>
+                        <input type="text" [(ngModel)]="userModel.cityOfResidence" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="zipCode">C.A.P di residenza (*)</label>
+                        <input type="text" [(ngModel)]="userModel.zipCode" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="addressOfResidence">Indirizzo di residenza (*)</label>
+                        <input type="text" [(ngModel)]="userModel.addressOfResidence" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row buttons">
+                <div class="col-md-6 offset-md-6 pull-right text-right">
+                    <input type="submit" class="btn cancel-button" value="ANNULA">
+                    <input type="submit" class="btn save-button" value="SALVA">
+                </div>
+            </div>
+
+            <div class="col-md-12 info-divider">
+                Documenti
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="documentType">Tipologia Documento</label>
+                        <input type="text" [(ngModel)]="userModel.documentType" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="documentNumber">Nr. Documento</label>
+                        <input type="text" [(ngModel)]="userModel.documentNumber" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="placeOfRelease">Comune di Rilascio</label>
+                        <input type="text" [(ngModel)]="userModel.placeOfRelease" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dateOfRelease">Data di Rilascio</label>
+                        <input type="text" [(ngModel)]="userModel.dateOfRelease" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phoneNumber">Telefono (**)</label>
+                        <input type="number" [(ngModel)]="userModel.phoneNumber" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mobileNumber">Cellulare (**)</label>
+                        <input type="number" [(ngModel)]="userModel.mobileNumber" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fax">Fax</label>
+                        <input type="number" [(ngModel)]="userModel.fax" class="form-control col-md-9" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" [(ngModel)]="userModel.email" class="form-control col-md-9" />
+                    </div>
+                </div>
+            </div>
+        </tab>
+    </tabs>
 </div>
